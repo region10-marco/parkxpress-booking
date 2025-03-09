@@ -1,5 +1,4 @@
 jQuery(document).ready(function ($) {
-    // jQuery UI Datepicker initialisieren
     $("#check-in").datepicker({
         dateFormat: "dd.mm.yy",
         minDate: 0,
@@ -16,7 +15,6 @@ jQuery(document).ready(function ($) {
         minDate: 1
     });
 
-    // AJAX-Request für Parkplatzverfügbarkeit
     function loadParkingOptions(checkIn, checkOut) {
         $.ajax({
             type: "POST",
@@ -28,7 +26,6 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 var data = JSON.parse(response);
-
                 if (data.error) {
                     $("#error-parking p").text(data.error);
                     $("#error-parking").show();
@@ -37,41 +34,40 @@ jQuery(document).ready(function ($) {
 
                 var parkingHTML = "";
                 $.each(data.parkingTypes, function (type, info) {
+                    var buttonClass = info.count > 0 ? "book-now" : "sold-out";
+                    var buttonText = info.count > 0 ? "JETZT BUCHEN" : "AUSGEBUCHT";
+
                     parkingHTML += `
-                        <div class="parking-option">
-                            <h2>${type}-Parking</h2>
-                            <p>Preis: ${info.price} EUR</p>
-                            <p>Verfügbar: ${info.count} Plätze</p>
-                            <button class="selectParking checkDateBtn" data-type="${type}" data-price="${info.price}">Auswählen</button>
+                        <div class="offerDetail">
+                            <div class="offerDetailLeft">
+                                <h2>${type}-Parking:</h2>
+                                <ul>${info.features.map(f => `<li>✅ ${f}</li>`).join("")}</ul>
+                            </div>
+                            <div class="offerDetailRight">
+                                <p class="offerPrice">
+                                    <span class="offerPriceDetail">${info.price}</span> EUR
+                                </p>
+                                <button class="${buttonClass}">${buttonText}</button>
+                            </div>
                         </div>
                     `;
                 });
 
                 $("#parking-container").html(parkingHTML);
                 $("#parking-options").fadeIn();
-
-                $(".selectParking").click(function () {
-                    alert("Sie haben " + $(this).data("type") + " für " + $(this).data("price") + " EUR ausgewählt.");
-                    // Hier kannst du ggf. Weiterleitung oder weitere Aktionen einbauen
-                });
             }
         });
     }
 
-    // Event-Handler für den Button "Verfügbarkeit prüfen"
     $("#submitDate").click(function () {
         var checkIn = $("#check-in").val();
         var checkOut = $("#check-out").val();
         var errorMessage = "";
 
-        if (!checkIn) {
-            errorMessage += "Bitte ein Check-in Datum auswählen.\n";
-        }
-        if (!checkOut) {
-            errorMessage += "Bitte ein Check-out Datum auswählen.\n";
-        }
+        if (!checkIn) errorMessage += "Bitte ein Check-in Datum auswählen.\n";
+        if (!checkOut) errorMessage += "Bitte ein Check-out Datum auswählen.\n";
 
-        if (errorMessage !== "") {
+        if (errorMessage) {
             $("#errorincontent").text(errorMessage);
             $("#error").show();
         } else {

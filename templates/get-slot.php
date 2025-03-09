@@ -1,8 +1,6 @@
-<div id="checkDateWrapper">
-    <!-- Schritt 1: Datumsbereich auswählen -->
-    <h1>Wählen Sie Ihr An- und Abreisedatum</h1>
+<div id="stepTwoContainer">
     <div id="checkDate">
- 
+        <h1>Wählen Sie Ihr An- und Abreisedatum</h1>
         <div id="error" style="display:none;">
             <p id="errorincontent"></p>
         </div>
@@ -16,20 +14,14 @@
             <input type="text" id="check-out" name="check-out" class="textInput" readonly>
         </div>
 
-        <button id="submitDate" class="checkDateBtn">Verfügbarkeit prüfen</button>
+        <button id="submitDate" class="checkDateBtn">JETZT PRÜFEN</button>
     </div>
 
-    <!-- Parkplatzoptionen anzeigen -->
-    <div id="parking-options">
+    <div id="parking-options" style="display:none;">
         <h1>Wählen Sie Ihren Parkplatz</h1>
         <div id="error-parking" style="display:none;">
             <p id="errorincontent"></p>
         </div>
-
-        <div id="parking-container">
-            <!-- Hier werden die Parkplatzoptionen dynamisch eingefügt -->
-        </div>
-
-        <button id="continue" class="checkDateBtn">Weiter</button>
+        <div id="parking-container"></div>
     </div>
 </div>
