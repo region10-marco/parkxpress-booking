@@ -1,11 +1,8 @@
 jQuery(document).ready(function ($) {
-    var today = new Date();
-    var formattedToday = today.toISOString().split('T')[0]; // YYYY-MM-DD Format für den Vergleich
-
-    // Initialisierung des Datepickers
+    // jQuery UI Datepicker initialisieren
     $("#check-in").datepicker({
         dateFormat: "dd.mm.yy",
-        minDate: 0, // Heute oder später
+        minDate: 0,
         onSelect: function (selectedDate) {
             var selectedDateObj = $("#check-in").datepicker("getDate");
             var nextDay = new Date(selectedDateObj);
@@ -15,12 +12,54 @@ jQuery(document).ready(function ($) {
     });
 
     $("#check-out").datepicker({
-        dateFormat: "dd.mm.yyyy",
-        minDate: 1 // Mindestens 1 Tag nach dem Check-in
+        dateFormat: "dd.mm.yy",
+        minDate: 1
     });
 
-    // Validierung und Fehlermeldungen
-    $("#submit").click(function () {
+    // AJAX-Request für Parkplatzverfügbarkeit
+    function loadParkingOptions(checkIn, checkOut) {
+        $.ajax({
+            type: "POST",
+            url: px_ajax.url,
+            data: {
+                action: "px_get_parking_types",
+                check_in: checkIn,
+                check_out: checkOut
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+
+                if (data.error) {
+                    $("#error-parking p").text(data.error);
+                    $("#error-parking").show();
+                    return;
+                }
+
+                var parkingHTML = "";
+                $.each(data.parkingTypes, function (type, info) {
+                    parkingHTML += `
+                        <div class="parking-option">
+                            <h2>${type}-Parking</h2>
+                            <p>Preis: ${info.price} EUR</p>
+                            <p>Verfügbar: ${info.count} Plätze</p>
+                            <button class="selectParking checkDateBtn" data-type="${type}" data-price="${info.price}">Auswählen</button>
+                        </div>
+                    `;
+                });
+
+                $("#parking-container").html(parkingHTML);
+                $("#parking-options").fadeIn();
+
+                $(".selectParking").click(function () {
+                    alert("Sie haben " + $(this).data("type") + " für " + $(this).data("price") + " EUR ausgewählt.");
+                    // Hier kannst du ggf. Weiterleitung oder weitere Aktionen einbauen
+                });
+            }
+        });
+    }
+
+    // Event-Handler für den Button "Verfügbarkeit prüfen"
+    $("#submitDate").click(function () {
         var checkIn = $("#check-in").val();
         var checkOut = $("#check-out").val();
         var errorMessage = "";
@@ -37,7 +76,7 @@ jQuery(document).ready(function ($) {
             $("#error").show();
         } else {
             $("#error").hide();
-            alert("Buchung erfolgreich!"); // Hier könnte ein Submit-Event folgen
+            loadParkingOptions(checkIn, checkOut);
         }
     });
 });
