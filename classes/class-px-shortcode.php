@@ -11,7 +11,9 @@ class PxShortcode
     {
         ob_start();
         // Hier kannst du deine Klassen und Logik einbinden, z.B.:
-        echo 'Test';
+        include dirname(plugin_dir_path(__FILE__)) . '/lang/order_lang_de.php';
+        include dirname(plugin_dir_path(__FILE__)) . '/templates/step-one.php';
+
         return ob_get_clean();
     }
 }

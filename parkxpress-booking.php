@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ParkXpress
+ * Plugin Name: ParkXpress Buchungstool
  * Description: Buchungsmodul für ParkXpress.
  * Version: 1.0
  * Author: Marco Hinkelmann
@@ -11,6 +11,8 @@ require_once plugin_dir_path(__FILE__) . 'classes/class-px-shortcode.php';
 
 // Skripte und Styles einbinden
 function mb_enqueue_scripts() {
+    wp_enqueue_script('jquery-ui-datepicker');
+    wp_enqueue_style('jquery-ui-css', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
     wp_enqueue_script('mb-script', plugin_dir_url(__FILE__) . 'js/parkxpress.js', array('jquery'), '1.0', true);
     wp_enqueue_style('mb-style', plugin_dir_url(__FILE__) . 'css/parkxpress.css');
 }
