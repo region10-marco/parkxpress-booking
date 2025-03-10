@@ -5,6 +5,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
+  margin-bottom: 20px;
 }
 #checkDateWrapper #checkDate {
   display: grid;
@@ -125,4 +126,28 @@
   transition: all 0.3s;
   opacity: 1;
   min-width: 200px;
+}
+
+#orderFormWrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+#orderFormWrapper #orderWrapperLeft {
+  grid-column: span 8;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+#orderFormWrapper #orderWrapperRight {
+  grid-column: span 4;
+}
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
 }

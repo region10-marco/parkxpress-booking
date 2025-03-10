@@ -22,11 +22,14 @@
         <div id="error-parking" style="display:none;">
             <p id="errorincontent"></p>
         </div>
-
-        <div id="parking-container"></div>
     </div>
-    <div id="orderFormWrapper">
-        <div id="orderForm">
+</div>
+
+<div id="parking-container"></div>
+
+<div id="orderFormWrapper">
+    <div id="orderWrapperLeft">
+        <div id="orderFormTwo">
             <form id="my-form" action="#" method="post" enctype="multipart/form-data">
                 <div id="ang">
 
@@ -145,7 +148,13 @@
             </form>
         </div>
     </div>
+    <div id="orderWrapperRight">
+    <div id="orderWrapperRightInner">
+        <div>Ihr gewählter Tarif:<span></span></div>
+    </div>
+    </div>
 </div>
+
 
 <script>
     jQuery(document).ready(function($) {
