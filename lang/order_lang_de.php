@@ -14,7 +14,7 @@ $all_order_now = "ALL INCLUSIVE - Tarif jetzt buchen";
 $headline_two = "Wählen Sie Ihren Parkplatz";
 //Formelemente
 
-$order_headline = "KUNDENDETAILS";
+$order_headline = "Bitte vervollständigen Sie Ihre Daten";
 $order_headline2 = "Angaben zum Flug";
 $order_text = "Bitte vervollständigen Sie Ihre Angaben.";
 $order_label_firm = "Firma";

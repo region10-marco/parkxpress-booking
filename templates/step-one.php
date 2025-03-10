@@ -14,8 +14,8 @@
             <input type="text" id="check-out" name="check-out" class="textInput" readonly>
         </div>
 
-        <button id="submit" class="checkDateBtn"><?php echo $order_btn_1; ?></button>
+        <button id="submitDate" class="checkDateBtn"><?php echo $checkbtn; ?></button>
+    </div>
 
-        <div class="clear"></div>
-
+ 
 </div>

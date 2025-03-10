@@ -148,12 +148,22 @@
     }
 }
 
+#parking-options {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 #orderFormWrapper {
     max-width: 1200px;
     margin: auto;
-
-
     display: grid;
+
+
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
 
@@ -163,6 +173,15 @@
         border: 1px solid #ddd;
         border-radius: 8px;
         background: #f9f9f9;
+
+        #displayfiels {
+            input {
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 1em;
+                width: 100%;
+            }
+        }
     }
 
     #orderWrapperRight {
