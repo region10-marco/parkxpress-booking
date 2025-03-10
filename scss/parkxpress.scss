@@ -108,3 +108,41 @@
         }
     }
 }
+
+.offerDetail {
+    background-color: #fff;
+    
+
+    .book-now {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        background: #a0ce4e;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        opacity: 1;
+        min-width: 200px;
+    
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .sold-out {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        background: red;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: unset;
+        transition: all 0.3s;
+        opacity: 1;
+        min-width: 200px;
+    
+    }
+}

@@ -18,7 +18,7 @@
     </div>
 
     <div id="parking-options" style="display:none;">
-        <h1><?php echo $order_headline; ?></h1>
+        <h1><?php echo $headline_two; ?></h1>
         <div id="error-parking" style="display:none;">
             <p id="errorincontent"></p>
         </div>
@@ -77,7 +77,7 @@ jQuery(document).ready(function ($) {
                             <span class="offerPriceDetail">${parseFloat(data.price_economy).toFixed(2).replace('.', ',')}</span> EUR
                         </p>
                         <button class="${data.economy_slot > 0 ? 'book-now' : 'sold-out'}">
-                            ${data.economy_slot > 0 ? '<?php echo $eco_order_now; ?>' : '<?php echo $no_orderword; ?>'}
+                            ${data.economy_slot > 0 ? '<?php echo $eco_order_now; ?>' : '<?php echo $no_orderword_2; ?>'}
                         </button>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ jQuery(document).ready(function ($) {
                             <span class="offerPriceDetail">${parseFloat(data.price_flex).toFixed(2).replace('.', ',')}</span> EUR
                         </p>
                         <button class="${data.flex_slot > 0 ? 'book-now' : 'sold-out'}">
-                            ${data.flex_slot > 0 ? '<?php echo $flex_order_now; ?>' : '<?php echo $no_orderword; ?>'}
+                            ${data.flex_slot > 0 ? '<?php echo $flex_order_now; ?>' : '<?php echo $no_orderword_2; ?>'}
                         </button>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
                             <span class="offerPriceDetail">${parseFloat(data.price_xxl).toFixed(2).replace('.', ',')}</span> EUR
                         </p>
                         <button class="${data.xxl_slot > 0 ? 'book-now' : 'sold-out'}">
-                            ${data.xxl_slot > 0 ? '<?php echo $xxl_order_now; ?>' : '<?php echo $no_orderword; ?>'}
+                            ${data.xxl_slot > 0 ? '<?php echo $xxl_order_now; ?>' : '<?php echo $no_orderword_2; ?>'}
                         </button>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ jQuery(document).ready(function ($) {
                             <span class="offerPriceDetail">${parseFloat(data.price_valet).toFixed(2).replace('.', ',')}</span> EUR
                         </p>
                         <button class="${data.valet_slot > 0 ? 'book-now' : 'sold-out'}">
-                            ${data.valet_slot > 0 ? '<?php echo $valet_order_now; ?>' : '<?php echo $no_orderword; ?>'}
+                            ${data.valet_slot > 0 ? '<?php echo $valet_order_now; ?>' : '<?php echo $no_orderword_2; ?>'}
                         </button>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ jQuery(document).ready(function ($) {
                             <span class="offerPriceDetail">${parseFloat(data.price_all).toFixed(2).replace('.', ',')}</span> EUR
                         </p>
                         <button class="${data.all_slot > 0 ? 'book-now' : 'sold-out'}">
-                            ${data.all_slot > 0 ? '<?php echo $all_order_now; ?>' : '<?php echo $no_orderword; ?>'}
+                            ${data.all_slot > 0 ? '<?php echo $all_order_now; ?>' : '<?php echo $no_orderword_2; ?>'}
                         </button>
                     </div>
                 </div>

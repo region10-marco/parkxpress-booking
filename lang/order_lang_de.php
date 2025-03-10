@@ -11,7 +11,7 @@ $flex_order_now = "FLEX - Tarif jetzt buchen";
 $xxl_order_now = "XXL - Tarif jetzt buchen";
 $valet_order_now = "VALET - Tarif jetzt buchen";
 $all_order_now = "ALL INCLUSIVE - Tarif jetzt buchen";
-
+$headline_two = "Wählen Sie Ihren Parkplatz";
 //Formelemente
 
 $order_headline = "KUNDENDETAILS";
