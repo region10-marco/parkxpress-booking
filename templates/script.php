@@ -46,6 +46,9 @@
                     bookingArray.checkInDate = checkIn;
                     bookingArray.checkOutDate = checkOut;
 
+                    $('#checkinrow').html(checkIn);
+                    $('#checkoutrow').html(checkOut);
+
                     var parkingHTML = `
                 <div class="offerDetail">
                     <div class="offerDetailLeft">
@@ -173,6 +176,28 @@
             bookingArray.parkingType = parktype;
             $("#parking-options").fadeOut();
             $('#orderFormWrapper').css('display', 'grid');
+
+            if(parktype == 'economy') {
+                $('#tarifrow').html('Economy-Parking');
+     
+            } else if(parktype == 'flex') {
+                $('#tarifrow').html('Flex-Parking');
+
+            } else if(parktype == 'xxl') {
+                $('#tarifrow').html('XXL-Parking');
+    
+            } else if(parktype == 'valet') {
+                $('#tarifrow').html('Valet-Parking');
+
+            } else if(parktype == 'all') {
+                $('#tarifrow').html('All-Inclusive-Parking');
+       
+            }
         });
+
+
+
+
+
     });
 </script>

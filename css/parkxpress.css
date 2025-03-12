@@ -145,6 +145,15 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
 }
+#orderFormWrapper hr {
+  margin: 20px 0px;
+  border: unset;
+  background-color: #ddd;
+  height: 1px;
+}
+#orderFormWrapper h4 {
+  margin-top: 0px;
+}
 #orderFormWrapper #orderWrapperLeft {
   grid-column: span 8;
   padding: 20px;
@@ -152,18 +161,122 @@
   border-radius: 8px;
   background: #f9f9f9;
 }
-#orderFormWrapper #orderWrapperLeft #displayfiels input {
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 1em;
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  margin-bottom: 15px;
+  height: 35px;
+  padding: 5px 0px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup label {
+  font-weight: bold;
   width: 100%;
+  /* Label nimmt 30% des Platzes ein */
+  text-align: left;
+  grid-column: span 4;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  margin-right: 0px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup label span {
+  margin-left: 5px;
+  font-weight: normal;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup input,
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup select {
+  width: 100%;
+  /* Input-Feld nimmt 65% ein */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  grid-column: span 8;
+  height: 35px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .pxcheckbox {
+  width: 20px !important;
+  height: 20px !important;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup textarea {
+  width: 100%;
+  /* Input-Feld nimmt 65% ein */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  grid-column: span 8;
+  height: 100px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .span2 {
+  grid-column: span 2;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .span4 {
+  grid-column: span 4;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .span3 {
+  grid-column: span 3;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .span5 {
+  grid-column: span 5;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup .span6 {
+  grid-column: span 6;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup select {
+  background: #fff;
+  cursor: pointer;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroup input[type=checkbox] {
+  width: auto;
+  margin-right: 10px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroupTwo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  margin-bottom: 15px;
+  height: 35px;
+  padding: 5px 0px;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroupTwo label {
+  grid-column: span 11;
+  width: 100%;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroupTwo div {
+  grid-column: span 1;
+}
+#orderFormWrapper #orderWrapperLeft #displayfiels .formGroupTwo div .pxcheckbox {
+  width: 20px !important;
+  height: 20px !important;
 }
 #orderFormWrapper #orderWrapperRight {
   grid-column: span 4;
+  position: sticky;
+  top: 20px;
+  /* Abstand zum oberen Rand */
+  height: fit-content;
 }
 #orderFormWrapper #orderWrapperRight #orderWrapperRightInner {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
+}
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner h4 {
+  font-size: 20px;
+}
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .endpreisrow {
+  font-size: 1.5em;
+  color: #a0ce4e;
+}
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .orderSummaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .tankrow,
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .innenrow,
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .aussenrow,
+#orderFormWrapper #orderWrapperRight #orderWrapperRightInner .personenrow {
+  display: none;
 }

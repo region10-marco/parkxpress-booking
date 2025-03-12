@@ -163,6 +163,17 @@
     margin: auto;
     display: grid;
 
+    hr {
+        margin: 20px 0px;
+        border: unset;
+        background-color: #ddd;
+        height: 1px;
+
+    }
+
+    h4 {
+        margin-top: 0px;
+    }
 
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
@@ -175,23 +186,157 @@
         background: #f9f9f9;
 
         #displayfiels {
-            input {
-                border-radius: 5px;
-                padding: 10px;
-                font-size: 1em;
-                width: 100%;
+            .formGroup {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 20px;
+                margin-bottom: 15px;
+                height: 35px;
+                padding: 5px 0px;
+
+                label {
+                    font-weight: bold;
+                    width: 100%;
+                    /* Label nimmt 30% des Platzes ein */
+                    text-align: left;
+                    grid-column: span 4;
+                    display: flex;
+                    align-items: center;
+                    height: 35px;
+                    margin-right: 0px;
+                    span {
+                        margin-left: 5px;
+                        font-weight: normal;
+                    }
+                }
+
+                input,
+                select {
+                    width: 100%;
+                    /* Input-Feld nimmt 65% ein */
+
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1em;
+                    grid-column: span 8;
+                    height: 35px;
+                }
+
+                .pxcheckbox {
+                    width: 20px !important;
+                    height: 20px !important;
+                }
+
+
+
+
+                textarea {
+                    width: 100%;
+                    /* Input-Feld nimmt 65% ein */
+
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1em;
+                    grid-column: span 8;
+                    height: 100px;
+                }
+
+                .span2 {
+                    grid-column: span 2;
+                }
+
+                .span4 {
+                    grid-column: span 4;
+                }
+
+                .span3 {
+                    grid-column: span 3;
+                }
+
+                .span5 {
+                    grid-column: span 5;
+                }
+
+                .span6 {
+                    grid-column: span 6;
+                }
+
+                select {
+                    background: #fff;
+                    cursor: pointer;
+                }
+
+                input[type="checkbox"] {
+                    width: auto;
+                    margin-right: 10px;
+                }
             }
+
+    .formGroupTwo {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        margin-bottom: 15px;
+        height: 35px;
+        padding: 5px 0px;
+        label {
+            grid-column: span 11;
+            width: 100%;
         }
+        div {
+            grid-column: span 1;
+            .pxcheckbox {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+        }
+    }
+            
+        }
+
+
     }
 
     #orderWrapperRight {
         grid-column: span 4;
+        position: sticky;
+        top: 20px;
+        /* Abstand zum oberen Rand */
+        height: fit-content;
 
         #orderWrapperRightInner {
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
             background: #f9f9f9;
+
+            h4 {
+                font-size: 20px;
+            }
+
+       
+
+            .endpreisrow {
+                font-size: 1.5em;
+                color: #a0ce4e;
+            }
+
+            .orderSummaryRow {
+                display: flex;
+                justify-content: space-between; // ✅ Richtiger Wert
+                align-items: center;
+
+               
+            }
+
+            .tankrow,
+            .innenrow,
+            .aussenrow,
+            .personenrow {
+                display: none;
+            }
         }
+
     }
 }
